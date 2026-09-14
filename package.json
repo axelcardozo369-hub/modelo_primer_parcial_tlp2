@@ -1,0 +1,31 @@
+{
+  "name": "modelo_primer_parcial_tlp2",
+  "version": "1.0.0",
+  "description": "**Alumno:** Cardozo Axel",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch app.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axelcardozo369-hub/modelo_primer_parcial_tlp2.git"
+  },
+  "keywords": [],
+  "author": "Axel Cardozo",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/axelcardozo369-hub/modelo_primer_parcial_tlp2/issues"
+  },
+  "homepage": "https://github.com/axelcardozo369-hub/modelo_primer_parcial_tlp2#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.24.4",
+    "sequelize": "^6.37.8"
+  }
+}
