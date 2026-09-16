@@ -22,9 +22,9 @@ export const UserModel = sequelize.define("User", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  role: {
-    type: DataTypes.ENUM("secretary", "admin"),
+   role: {
+    type: DataTypes.ENUM('vendedor', 'administrador'),
     allowNull: false,
-    defaultValue: "secretary",
+    defaultValue: 'vendedor'
   },
 });
