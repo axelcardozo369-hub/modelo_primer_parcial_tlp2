@@ -19,7 +19,7 @@ export const idUsers = async (req, res) => {
     // if (!user) {
     //   return res.status(404).josn({ message: "el user no se encuentra" });
     // }
-    return res.status(201).json({ message: "user encontrado", user });
+    return res.status(200).json({ message: "user encontrado", user });
   } catch (error) {
     return res
       .status(500)
@@ -45,7 +45,7 @@ export const deleteUser = async (req,res) => {
   const {id} = req.params;
   const userExiste = await UserModel.findByPk(id);
   await userExiste.destroy()
-  return res.status(201).json({message:"user eliminado con exito",userExiste})
+  return res.status(200).json({message:"user eliminado con exito",userExiste})
  } catch (error) {
   return res.status(500).json({message:"error  al poder eliminar user",error:error.message})
  } 

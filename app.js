@@ -9,6 +9,9 @@ import { validate } from "./src/middlewares/validate.js";
 import { ClienteModel } from "./src/models/cliente.model.js";
 import { ProductModel } from "./src/models/producto.model.js";
 import { ProductoRouter } from "./src/routes/producto.routes.js";
+import { clienteRouter } from "./src/routes/cliente.routes.js";
+import { CategoryRouter } from "./src/routes/category.routes.js";
+import { productoCategoryRouter } from "./src/routes/productCategory.routes.js";
 dotenv.config();
 
 console.log("Puerto configurado:", process.env.PORT);
@@ -22,6 +25,9 @@ app.use(express.json());
 app.use("/api", UserRouter);
 app.use("/api", ProfileRouter);
 app.use("/api",ProductoRouter)
+app.use("/api",clienteRouter)
+app.use("/api",CategoryRouter)
+app.use("/api",productoCategoryRouter)
 app.listen(PORT, () => {
   console.log("server corriendo");
   console.log(`server en http://localhost:${PORT}`);

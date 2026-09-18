@@ -27,6 +27,7 @@ export const ClienteModel = sequelize.define('Cliente', {
     type: DataTypes.STRING,
     allowNull: false
   },
+  //vendedor_id
   seller_id: {
     type: DataTypes.INTEGER,
     allowNull: false

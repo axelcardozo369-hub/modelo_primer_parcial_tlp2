@@ -62,9 +62,16 @@ export const deleteProducto = async (req, res) => {
 };
 export const updateProducto = async (req, res) => {
   try {
+    const validationData = matchedData(req,{locations:["body"]});
+    const {id} = matchedData(req,{locations:["params"]});
+    const idProductoExiste = await ProductModel.findByPk(id);
+
+    await idProductoExiste.update(validationData)
+
+    return res.status(201).json({message:"producto editado correctamente",idProductoExiste})
   } catch (error) {
     return res
       .status(500)
-      .json({ message: "error al eliminar producto", error: error.message });
+      .json({ message: "error al editar producto", error: error.message });
   }
 };

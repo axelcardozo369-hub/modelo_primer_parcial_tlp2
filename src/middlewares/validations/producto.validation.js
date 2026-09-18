@@ -28,3 +28,20 @@ export const deleteProductoValidator = [
         }
     })
 ]
+export const updateproductoValidator = [
+    param("ïd").isInt({min:1}).withMessage("el id debe ser un numero positivo").bail()
+    .custom(async (id) => {
+        const idExisteProducto = await ProductModel.findByPk(id);
+        if (!idExisteProducto) {
+            throw new Error("el producto que buscaste no existe en la base de datos");
+            
+        }
+    }),
+    body("code").optional().notEmpty().withMessage("el code no debe ser vacio").bail(),
+    body("description").optional().notEmpty().withMessage("la description no debe ser vacia").bail(),
+    body("brand").optional().notEmpty().withMessage("brand no debe se vacia").bail(),
+    body("model").optional().notEmpty().withMessage("el model no debe ser vacio").bail(),
+    body("price").optional().notEmpty().withMessage("el price no debe ser vacio"),
+    body("fecha_ingreso").optional().notEmpty().withMessage("fecha_ingreso no debe ser ingreso"),
+
+]
